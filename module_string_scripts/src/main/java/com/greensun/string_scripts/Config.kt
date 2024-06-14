@@ -22,16 +22,12 @@ object Config {
 
     // 指定语言
     val importInclude = listOf<String>(
-        "values-ja-rJP",
-        "values-ko-rKR",
-        "values-ar"
+
     )
 
     // 导出指定语言
     val exportInclude = listOf<String>(
-        "values",
-        "values-zh-rCN",
-        "values-ro-rRO"
+
     )
 //        "values-en"
 //        "values-zh"
@@ -49,7 +45,7 @@ object Config {
     // 导入导出时应该用同一个基准
     const val isBaseOnWord = false
     // 去重/恢复 基准语言，找不到用默认
-    const val BASE_LANG = "values-zh-rCN"
+    const val BASE_LANG = "values"
     const val DEFAULT_LANG = "values"
     // 导出时基于哪个语言排序
     const val SORT_LANG = BASE_LANG

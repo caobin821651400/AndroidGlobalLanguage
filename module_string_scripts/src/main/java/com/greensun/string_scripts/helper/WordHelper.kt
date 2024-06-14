@@ -322,11 +322,16 @@ object WordHelper {
      * 这里通过加\转义，兼容原有string
      */
     fun escapeText(text: String): String {
+        if (text.equals("*=")){
+            return "&#160;"
+        }
         var last = '0'
         val builder = text.toCharArray().fold(StringBuilder()) { acc, char ->
             val piece = when(char) {
                 '"' -> if (last != '\\') "\\\"" else char
                 '\'' -> if (last != '\\') "\\\'" else char
+                '&' -> if (last != '#') "&amp;" else char
+                '<' -> if (last != '\\') "&lt;" else char
                 else -> char
             }
             acc.append(piece)
